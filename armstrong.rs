@@ -2,20 +2,20 @@ use std::io;
 fn main() {
 let mut input = String::new();
 io::stdin().read_line(&mut input).unwrap();
-let mut _n: i32 = input.trim().parse().unwrap();
-let mut _sum=0;
-let mut _h=_n;
-while _n!=0{
-let _r=_n % 10;
-_n=_n/10;
-let mut p=_h.to_string();
-p=p.len().to_string();
-_sum=_sum+i32::pow(_r,p.parse::<u32>().unwrap());
-}
-if(_sum==_h){
-println!("{} is a armstrong number",_h);
-  }
+let mut n: i32 = input.trim().parse().unwrap();
+let mut sum=0;
+let mut copy_number=n;
+while n!=0{
+	let rem=n % 10;
+	n=n/10;
+	let mut power=copy_number.to_string();
+	power=power.len().to_string();
+	sum=sum+i32::pow(rem,power.parse::<u32>().unwrap());
+	}
+if(sum==copy_number){
+		println!("{} is a armstrong number",copy_number);
+	}
 else{
-println!("{} is not a armstrong number",_h);
-  }
+		println!("{} is not a armstrong number",copy_number);
+	}
 }
